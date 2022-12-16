@@ -58,8 +58,8 @@ def settings_friends_json_parse(json_file, user_conf):
     elif data_type == 2:
         # 进阶格式
         try:
-            for dic in json_file["friends"]:
-                link_list = dic["link_list"]
+            for link_list in json_file["friends"]:
+                # link_list = dic["link_list"]
                 for link in link_list:
                     # 必须有name、link、avatar字段
                     name = link.get("name")
