@@ -62,6 +62,8 @@ def settings_friends_json_parse(json_file, user_conf):
                 # link_list = dic["link_list"]
                 # for link in link_list:
                 # 必须有name、link、avatar字段
+                logger.warning(f"----一个Link----")
+                logger.warning(link)
                 name = link.get("name")
                 friendlink = link.get("link")
                 avatar = link.get("avatar")
