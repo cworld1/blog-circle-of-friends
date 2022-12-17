@@ -69,10 +69,10 @@ def settings_friends_json_parse(json_file, user_conf):
                 avatar = link.get("avatar")
                 suffix = link.get("suffix")
                 if name and friendlink and avatar:
-                    friends = [name, friendlink, avatar]
+                    oneFriend = [name, friendlink, avatar]
                     if suffix:
-                        friends.append(suffix)
-                    user_conf["SETTINGS_FRIENDS_LINKS"]["list"].append(friends)
+                        oneFriend.append(suffix)
+                    user_conf["SETTINGS_FRIENDS_LINKS"]["list"].append(oneFriend)
         except:
             logger.warning(f"json_api进阶格式解析错误")
     else:
