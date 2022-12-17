@@ -58,22 +58,22 @@ def settings_friends_json_parse(json_file, user_conf):
     elif data_type == 2:
         # 进阶格式
         try:
-            # for dic in json_file["friends"]:
-            # link_list = dic["link_list"]
-            link_list = json_file["friends"]
-            for link in link_list:
-                # 必须有name、link、avatar字段
-                logger.warning(f"----一个Link----")
-                logger.warning(link)
-                name = link.get("name")
-                friendlink = link.get("link")
-                avatar = link.get("avatar")
-                suffix = link.get("suffix")
-                if name and friendlink and avatar:
-                    friends = [name, friendlink, avatar]
-                    if suffix:
-                        friends.append(suffix)
-                    user_conf["SETTINGS_FRIENDS_LINKS"]["list"].append(friends)
+            for dic in json_file["friends"]:
+                if dic["id_name"] == "special-links":
+                    continue
+                link_list = dic["link_list"]
+                for link in link_list:
+                    # 必须有name、link、avatar字段
+                    name = link.get("name")
+                    friendlink = link.get("link")
+                    avatar = link.get("avatar")
+                    suffix = link.get("suffix")
+                    if name and friendlink and avatar:
+                        friends = [name, friendlink, avatar]
+                        if suffix:
+                            friends.append(suffix)
+                        logger.warning(friends)
+                        user_conf["SETTINGS_FRIENDS_LINKS"]["list"].append(friends)
         except:
             logger.warning(f"json_api进阶格式解析错误")
     else:
