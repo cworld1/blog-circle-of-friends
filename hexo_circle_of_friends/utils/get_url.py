@@ -19,9 +19,9 @@ class GetUrl:
             return async_link
 
     def get_common1_url(self, response, queue):
-        avatar = response.css('#f.cf-friends p>img::attr(src)').extract()
-        link = response.css('#f.cf-friends ul>li:nth-child(3)>a::attr(href)').extract()
-        name = response.css('#f.cf-friends ul>li:nth-child(1)::text').extract()
+        avatar = response.css('.cf-friends img::attr(src)').extract()
+        link = response.css('.cf-friends a::attr(href)').extract()
+        name = response.css('.cf-friends a::text').extract()
         self.handle(avatar, link, name, queue, "common1")
 
     def get_common2_url(self, response, queue):
@@ -41,7 +41,11 @@ class GetUrl:
         if not avatar:
             avatar = response.css('.flink-list a img::attr(src)').extract()
         if not avatar:
+            # lazyload on
             avatar = response.css('.flink .site-card .info img::attr(data-lazy-src)').extract()
+        if not avatar:
+            # lazyload off
+            avatar = response.css('.flink .site-card .info img::attr(src)').extract()
 
         link = response.css('.flink-list a::attr(href)').extract()
         if not link:
