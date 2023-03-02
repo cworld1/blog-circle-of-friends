@@ -1,5 +1,5 @@
 BLOCK_SITE:
-- https://www.bandbbs.cn/
+- www.bandbbs.cn
 DATABASE: sqlite
 DEPLOY_TYPE: github
 GITEE_FRIENDS_LINKS:
