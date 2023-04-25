@@ -12,7 +12,7 @@ cryptography==39.0.1
 cssselect==1.1.0
 fastapi==0.95.1
 gevent==22.10.2
-greenlet==1.1.2
+greenlet==2.0.2
 h11==0.13.0
 h2==3.2.0
 hpack==3.0.0
