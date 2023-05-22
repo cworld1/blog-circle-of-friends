@@ -93,6 +93,7 @@ jobs:
           rebase: "true"
           name: ${{ env.GITHUB_NAME }}
           email: ${{ env.GITHUB_EMAIL }}
+          force-push: true
 
       - name: mongodb Update posts # mongodb
         if: ${{ env.STORAGE_TYPE == 'mongodb' }}
