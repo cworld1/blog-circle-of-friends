@@ -1,5 +1,5 @@
 leancloud==2.9.12
-fastapi==0.95.1
+fastapi==0.109.1
 uvicorn==0.14.0
 requests
 PyMySQL==1.0.2
