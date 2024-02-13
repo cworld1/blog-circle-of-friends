@@ -48,7 +48,7 @@ service-identity==21.1.0
 six==1.16.0
 SQLAlchemy==1.4.31
 starlette==0.36.3
-Twisted==23.8.0rc1 # scrapy 2.11.0 depends on Twisted<23.8.0 and >=18.9.0
+Twisted==22.10.0 # scrapy 2.11.0 depends on Twisted<23.8.0 and >=18.9.0
 typing-extensions==4.9.0 # fastapi 0.109.2 depends on typing-extensions>=4.8.0
 urllib3==1.26.18
 uvicorn==0.14.0
